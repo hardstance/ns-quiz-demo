@@ -8,9 +8,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Refusing to admit or fully acknowledge certain emotions or realities, even when they were clear to others.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -19,9 +19,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Avoiding situations, people, or emotions that feel too uncomfortable or difficult to handle.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -30,9 +30,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Frequently pointing out flaws or faults in others to avoid looking at or confronting my own insecurities.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -41,9 +41,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Harshly judging or belittling myself to avoid facing deeper emotional pain or fear of not being enough.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -52,9 +52,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Pushing uncomfortable thoughts or emotions out of my awareness to avoid dealing with them.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -63,9 +63,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Noticing feelings or behaviors in others that may actually reflect something within me.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -74,9 +74,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Redirecting my emotions, like frustration or anger, toward something or someone unrelated.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -85,9 +85,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Explaining or justifying my actions with logical reasons, even when the real reason might be uncomfortable to face.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -96,9 +96,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Channeling intense emotions into creative projects, hobbies, or physical activities.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -107,9 +107,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Falling back into behaviors or habits that remind me of how I handled stress as a child.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -118,9 +118,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Focusing on facts, logic, or analysis to avoid fully engaging with difficult emotions.",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -129,9 +129,9 @@
           "text": "I have survived by:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Acting in ways that are the opposite of how I truly feel in order to protect myself or others.",
-              "category": NaN
+              "category": ""
             }
           ]
         }
@@ -371,9 +371,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Anxiety Disorders (e.g., GAD, panic disorder, social anxiety)",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -382,9 +382,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Hypermobility / Ehlers-Danlos Syndrome",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -393,9 +393,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Hyperthyroidism or Hypothyroidism",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -404,9 +404,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Depression (e.g., major depressive disorder, dysthymia)",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -415,9 +415,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "PTSD or Complex PTSD",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -426,9 +426,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "ADHD or Autism Spectrum",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -437,9 +437,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Chronic Fatigue Syndrome / ME",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -448,9 +448,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Fibromyalgia",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -459,9 +459,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Irritable Bowel Syndrome (IBS)",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -470,9 +470,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Dysautonomia (e.g., POTS, orthostatic hypotension)",
-              "category": NaN
+              "category": ""
             }
           ]
         },
@@ -481,9 +481,9 @@
           "text": "Check any conditions you have been diagnosed with or experienced:",
           "options": [
             {
-              "key": NaN,
+              "key": "",
               "text": "Long Covid / Post-viral Syndrome",
-              "category": NaN
+              "category": ""
             }
           ]
         }
