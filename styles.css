@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  padding: 20rem 1rem;
+  padding: 2rem 1rem;
   max-width: 600px;
   font-family: Cambo,courier, serif;
   background-color: var(--background);
