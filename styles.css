@@ -33,6 +33,7 @@ h2 {
   padding-bottom: 0.25rem;
 }
 p {
+  font-family: Courier, serif;
   font-size: 1rem;
   margin: .5rem 0 0.5rem;
   font-weight: bold;
@@ -41,7 +42,6 @@ p {
 section {
   margin-bottom: 2rem;
 }
-
 label {
   display: flex;
   align-items: flex-start;
