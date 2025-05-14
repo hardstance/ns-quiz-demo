@@ -83,7 +83,49 @@
       .then(r => r.json())
       .then(quizData => {
         const quizContainer = document.getElementById('quiz');
+quizData.sections.forEach(section => {
+        const isMulti = multiSelectSections.includes(section.section);
+        const secEl = document.createElement('section');
+        secEl.innerHTML = `<h2>${section.section}</h2>`;
 
+        if (isMulti) {
+          // Group all questions under one prompt
+          const prompt = section.questions[0].text;
+          const qEl = document.createElement('div');
+          qEl.innerHTML = `<p>${prompt}</p>`;
+
+          section.questions.forEach(q => {
+            q.options.forEach(opt => {
+              qEl.innerHTML += `
+                <label>
+                  <input 
+                    type="checkbox" 
+                    name="${q.id}[]" 
+                    value="${opt.category}">
+                  ${opt.text}
+                </label><br>`;
+            });
+          });
+
+          secEl.appendChild(qEl);
+
+        } 
+        else {
+          // Render each question individually (radios)
+          section.questions.forEach(q => {
+            const qEl = document.createElement('div');
+            qEl.innerHTML = `<p>${q.text}</p>`;
+
+            q.options.forEach(opt => {
+              qEl.innerHTML += `
+                <label>
+                  <input 
+                    type="radio" 
+                    name="${q.id}" 
+                    value="${opt.category}">
+                  ${opt.text}
+                </label><br>`;
+            });
         // Render each section
         quizData.sections.forEach(section => {
           const isMulti = multiSelectSections.includes(section.section);
