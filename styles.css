@@ -34,7 +34,7 @@ h2 {
 }
 p {
   font-family: Courier, serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: .5rem 0 0.5rem;
   font-weight: bold;
   color: var(--accent);
