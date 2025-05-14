@@ -1,0 +1,914 @@
+{
+  "sections": [
+    {
+      "section": "Adaptive Resilience",
+      "questions": [
+        {
+          "id": "AR1",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Refusing to admit or fully acknowledge certain emotions or realities, even when they were clear to others.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR10",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Avoiding situations, people, or emotions that feel too uncomfortable or difficult to handle.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR11",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Frequently pointing out flaws or faults in others to avoid looking at or confronting my own insecurities.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR12",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Harshly judging or belittling myself to avoid facing deeper emotional pain or fear of not being enough.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR2",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Pushing uncomfortable thoughts or emotions out of my awareness to avoid dealing with them.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR3",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Noticing feelings or behaviors in others that may actually reflect something within me.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR4",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Redirecting my emotions, like frustration or anger, toward something or someone unrelated.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR5",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Explaining or justifying my actions with logical reasons, even when the real reason might be uncomfortable to face.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR6",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Channeling intense emotions into creative projects, hobbies, or physical activities.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR7",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Falling back into behaviors or habits that remind me of how I handled stress as a child.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR8",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Focusing on facts, logic, or analysis to avoid fully engaging with difficult emotions.",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "AR9",
+          "text": "I have survived by:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Acting in ways that are the opposite of how I truly feel in order to protect myself or others.",
+              "category": NaN
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Embodiment Assessment",
+      "questions": [
+        {
+          "id": "EA1_Touch",
+          "text": "Regarding touch:",
+          "options": [
+            {
+              "key": "A",
+              "text": "I rarely notice sensations like fabric on my skin, or I often don\u2019t register temperature changes until they are extreme.",
+              "category": "Hypoembodied"
+            },
+            {
+              "key": "B",
+              "text": "I sometimes notice sensations but don\u2019t always feel them in the moment (e.g., brushing against something).",
+              "category": "Regulated Embodiment"
+            },
+            {
+              "key": "C",
+              "text": "I\u2019m often very aware of the way fabric or textures feel against my skin and can notice temperature changes easily.",
+              "category": "Regulated Embodiment"
+            },
+            {
+              "key": "D",
+              "text": "I am highly sensitive to touch and temperature, often feeling every change, even subtle ones.",
+              "category": "Hyperembodied"
+            }
+          ]
+        },
+        {
+          "id": "EA2_Interoception",
+          "text": "How aware are you of your internal body signals (hunger, thirst, fatigue, etc.)?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I rarely notice my body\u2019s signals until they become intense or overwhelming.",
+              "category": "Hypoembodied"
+            },
+            {
+              "key": "B",
+              "text": "I\u2019m sometimes aware of internal signals, but I often miss them until they escalate.",
+              "category": "Regulated Embodiment"
+            },
+            {
+              "key": "C",
+              "text": "I can usually sense my body\u2019s needs (hunger, rest) when they are moderate.",
+              "category": "Regulated Embodiment"
+            },
+            {
+              "key": "D",
+              "text": "I am acutely aware of my body\u2019s needs, even subtle ones, and respond promptly.",
+              "category": "Hyperembodied"
+            }
+          ]
+        },
+        {
+          "id": "EA3_Proprioception",
+          "text": "How aware are you of your body\u2019s position in space (e.g., when walking or moving)?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I often feel \u201cdisconnected\u201d from my body\u2019s movements, sometimes bumping into things without noticing.",
+              "category": "Hypoembodied"
+            },
+            {
+              "key": "B",
+              "text": "I am occasionally aware of my body position but tend to lose track when I\u2019m distracted.",
+              "category": "Regulated Embodiment"
+            },
+            {
+              "key": "C",
+              "text": "I feel pretty grounded and aware of my body\u2019s movements, noticing when I shift position.",
+              "category": "Regulated Embodiment"
+            },
+            {
+              "key": "D",
+              "text": "I have a strong sense of my body\u2019s position and movements, even when I\u2019m engaged in other tasks.",
+              "category": "Hyperembodied"
+            }
+          ]
+        },
+        {
+          "id": "EA4_Neuroception",
+          "text": "When entering new spaces or situations:",
+          "options": [
+            {
+              "key": "A",
+              "text": "I rarely feel any sense of discomfort or \u201calertness,\u201d even in unfamiliar environments.",
+              "category": "Hypoembodied"
+            },
+            {
+              "key": "B",
+              "text": "I feel some level of awareness when entering new spaces but it\u2019s usually mild.",
+              "category": "Regulated Embodiment"
+            },
+            {
+              "key": "C",
+              "text": "I often scan my environment for potential threats or shifts in safety, noticing subtle cues.",
+              "category": "Regulated Embodiment"
+            },
+            {
+              "key": "D",
+              "text": "I am hyper-aware of potential threats and feel an immediate response to shifts in my environment, even if they are small.",
+              "category": "Hyperembodied"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Embodiment Reflections",
+      "questions": [
+        {
+          "id": "ER1",
+          "text": "When problem-solving or stressed, where do you focus your attention?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Only in my head (thoughts, ideas)",
+              "category": "Floating Head"
+            },
+            {
+              "key": "B",
+              "text": "Entirely in my body (physical sensations, feelings)",
+              "category": "Deeply Embodied"
+            }
+          ]
+        },
+        {
+          "id": "ER2",
+          "text": "When in pain or discomfort, how do you usually respond?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Ignore it and push through",
+              "category": "Floating Head"
+            },
+            {
+              "key": "B",
+              "text": "Explore the sensation to understand it better",
+              "category": "Deeply Embodied"
+            }
+          ]
+        },
+        {
+          "id": "ER3",
+          "text": "How often do you feel 'in your body' vs 'in your head'?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rarely or never in my body",
+              "category": "Floating Head"
+            },
+            {
+              "key": "B",
+              "text": "Fully grounded in my body most of the time",
+              "category": "Deeply Embodied"
+            }
+          ]
+        },
+        {
+          "id": "ER4",
+          "text": "Comfort exploring sensations without judgment?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Not at all / Rarely",
+              "category": "Floating Head"
+            },
+            {
+              "key": "B",
+              "text": "Often / Always",
+              "category": "Deeply Embodied"
+            }
+          ]
+        },
+        {
+          "id": "ER5",
+          "text": "Ease describing body sensations to someone else?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Very difficult / Difficult",
+              "category": "Floating Head"
+            },
+            {
+              "key": "B",
+              "text": "Easy / Very easy",
+              "category": "Deeply Embodied"
+            }
+          ]
+        },
+        {
+          "id": "ER6",
+          "text": "Rely on logic or trust your gut when deciding?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rely on logic or outside advice",
+              "category": "Floating Head"
+            },
+            {
+              "key": "B",
+              "text": "Often trust gut feelings or physical instincts",
+              "category": "Deeply Embodied"
+            }
+          ]
+        },
+        {
+          "id": "ER7",
+          "text": "React to discomfort with distraction or presence?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Distract with activities like working or scrolling",
+              "category": "Floating Head"
+            },
+            {
+              "key": "B",
+              "text": "Stay present with my body even when uncomfortable",
+              "category": "Deeply Embodied"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Health Considerations",
+      "questions": [
+        {
+          "id": "HC1",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Anxiety Disorders (e.g., GAD, panic disorder, social anxiety)",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC10",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Hypermobility / Ehlers-Danlos Syndrome",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC11",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Hyperthyroidism or Hypothyroidism",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC2",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Depression (e.g., major depressive disorder, dysthymia)",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC3",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "PTSD or Complex PTSD",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC4",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "ADHD or Autism Spectrum",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC5",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Chronic Fatigue Syndrome / ME",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC6",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Fibromyalgia",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC7",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Irritable Bowel Syndrome (IBS)",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC8",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Dysautonomia (e.g., POTS, orthostatic hypotension)",
+              "category": NaN
+            }
+          ]
+        },
+        {
+          "id": "HC9",
+          "text": "Check any conditions you have been diagnosed with or experienced:",
+          "options": [
+            {
+              "key": NaN,
+              "text": "Long Covid / Post-viral Syndrome",
+              "category": NaN
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Somatic Patterns",
+      "questions": [
+        {
+          "id": "SP10_WakeFeel",
+          "text": "How does your body feel when you wake up?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Stiff, like I\u2019ve been braced all night.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "Restless, like I didn\u2019t fully relax during sleep.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "Heavy or sluggish, like it\u2019s hard to get moving.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "Refreshed and ready to start the day.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP11_Sit",
+          "text": "What do you notice about your body when you\u2019re sitting?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I feel myself bracing or holding tension in my core or back.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I shift positions often or feel the need to move frequently.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "I slouch or feel my body collapsing into the chair.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "I sit with ease and feel supported by my posture.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP12_PhysActivity",
+          "text": "When you\u2019re doing physical activity, what feels true?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I over-engage my muscles, feeling tense or rigid.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I move quickly or find it hard to slow down.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "I feel sluggish or disconnected from the activity.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "I feel aligned and connected to my movements.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP13_HandsDay",
+          "text": "What do you notice about your hands during the day?",
+          "options": [
+            {
+              "key": "A",
+              "text": "My hands often feel clenched, like they\u2019re ready to grip something.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I fidget with objects or move my fingers often without realizing it.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "My hands feel limp or heavy, like they lack energy.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "My hands feel relaxed, and I only use them when needed.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP14_HandsExpr",
+          "text": "How do you use your hands when expressing yourself?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I use sharp, forceful gestures or make fists without noticing.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "My gestures are quick, and I find myself using my hands a lot.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "My movements are slow, or I avoid using my hands when speaking.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "My hand gestures feel natural and flow with my speech.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP15_JawDay",
+          "text": "What do you notice about your jaw during the day?",
+          "options": [
+            {
+              "key": "A",
+              "text": "My jaw feels tight, clenched, or overactive.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I catch myself grinding my teeth or moving my jaw frequently.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "My jaw feels slack, heavy, or disconnected.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "My jaw feels relaxed and balanced.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP16_MouthStress",
+          "text": "When you\u2019re thinking or stressed, what do you notice about your mouth?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I press my lips together tightly or clench my teeth.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I chew on things (e.g., pens, nails) or move my mouth restlessly.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "My mouth feels dry or sluggish, and I avoid speaking.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "My mouth feels comfortable and ready to engage when I need to.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP1_EyesDaily",
+          "text": "How do your eyes feel during the day?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I often squint, even when I don\u2019t need to.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I find myself looking away or avoiding eye contact.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "My vision feels blurry or unfocused at times, even without a medical issue.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "I feel comfortable and open making eye contact.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP2_EyesSocial",
+          "text": "What do you notice about your gaze in social situations?",
+          "options": [
+            {
+              "key": "A",
+              "text": "My gaze feels sharp or intense, like I\u2019m on high alert.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I tend to look around or scan the room frequently.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "I feel my eyes drooping or avoiding looking at others.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "I can maintain eye contact naturally without effort.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP3_Head",
+          "text": "How does your head feel in relation to your posture?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I often feel my head pushing forward or craning out.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I find myself turning my head frequently or avoiding holding it still.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "My head feels heavy, like it\u2019s being pulled down.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "My head feels balanced on my shoulders.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP4_Shoulders",
+          "text": "What do you notice in your shoulders?",
+          "options": [
+            {
+              "key": "A",
+              "text": "My shoulders often feel tight or braced, like I\u2019m ready to act.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I shrug or move my shoulders often without realizing it.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "My shoulders feel drooped or collapsed inward.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "My shoulders feel relaxed and aligned.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP5_Gait",
+          "text": "How would you describe your walking or standing posture?",
+          "options": [
+            {
+              "key": "A",
+              "text": "I tend to walk or stand with a stiff or rigid posture.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I feel light on my feet, almost like I\u2019m avoiding the ground.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "I feel heavy, like I\u2019m sinking into the ground.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "I feel grounded and steady when I walk or stand.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP6_LongSit",
+          "text": "When you sit or stand for long periods, how does your body react?",
+          "options": [
+            {
+              "key": "A",
+              "text": "My legs feel tense, as if they\u2019re ready to move at any moment.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "I find myself fidgeting or needing to adjust often.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "My lower body feels numb or disconnected.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "My posture feels natural, and I can stay comfortable.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP7_BreathGeneral",
+          "text": "How does your breathing feel most of the time?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Deep, forceful, or labored, like I\u2019m preparing for action or bracing myself.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "Quick and uneven, often tied to feeling rushed or restless.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "Shallow and slow, as if I\u2019m stuck or holding back.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "Deep and steady, with a sense of ease and balance.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP8_BreathStress",
+          "text": "When you\u2019re under stress, how does your breathing change?",
+          "options": [
+            {
+              "key": "A",
+              "text": "It becomes tight or high in my chest, like the air is stuck in my throat.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "It speeds up and feels shallow, like I\u2019m struggling to catch my breath.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "It feels like I stop breathing or hold my breath.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "It stays steady, even under pressure.",
+              "category": "Regulated"
+            }
+          ]
+        },
+        {
+          "id": "SP9_SleepPosition",
+          "text": "What position do you typically sleep in?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Tense or curled up, like I\u2019m protecting myself.",
+              "category": "Fight"
+            },
+            {
+              "key": "B",
+              "text": "Restless, frequently changing positions.",
+              "category": "Flight"
+            },
+            {
+              "key": "C",
+              "text": "Heavy and still, almost like I\u2019m stuck in one position.",
+              "category": "Freeze"
+            },
+            {
+              "key": "D",
+              "text": "Relaxed and natural, with ease to adjust if needed.",
+              "category": "Regulated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
