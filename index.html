@@ -19,42 +19,38 @@
   <div id="results"></div>
   
   <script>
-  // Fetch the quiz JSON
+  <script>
   fetch('quiz_structure.json')
     .then(res => res.json())
     .then(quizData => {
       const quizContainer = document.getElementById('quiz');
 
-      // For each section...
-      quizData.sections.forEach(section => {
-        // Decide if this section allows multiple answers
-        const multiSelectSections = [
-          'Adaptive Resilience',
-          'Health Considerations',
-          'Somatic Defense Intake Quiz'
-        ];
-        const isMulti = multiSelectSections.includes(section.section);
+      // Only these sections use checkboxes:
+      const multiSelectSections = [
+        'Adaptive Resilience',
+        'Health Considerations'
+      ];
 
-        // Create the section wrapper
+      // 1) Render each section
+      quizData.sections.forEach(section => {
+        const isMulti = multiSelectSections.includes(section.section);
         const secEl = document.createElement('section');
         secEl.innerHTML = `<h2>${section.section}</h2>`;
 
-        // Render each question
         section.questions.forEach(q => {
           const qEl = document.createElement('div');
           qEl.innerHTML = `<p>${q.text}</p>`;
 
           q.options.forEach(opt => {
-            // Use checkbox for multi, radio otherwise
             const inputType = isMulti ? 'checkbox' : 'radio';
-            // For radios: name="QID"; for checkboxes, name="QID[]"
+            // checkboxes use name="QID[]" so you can pick multiple
             const nameAttr = isMulti ? `${q.id}[]` : q.id;
 
             qEl.innerHTML += `
               <label>
-                <input
-                  type="${inputType}"
-                  name="${nameAttr}"
+                <input 
+                  type="${inputType}" 
+                  name="${nameAttr}" 
                   value="${opt.category}">
                 ${opt.text}
               </label><br>`;
@@ -66,25 +62,47 @@
         quizContainer.appendChild(secEl);
       });
 
-      // The rest of your submit handler stays the same...
+      // 2) Wire up the submit button
       document.getElementById('submitQuiz').addEventListener('click', () => {
         const counts = { Fight:0, Flight:0, Freeze:0, Regulation:0 };
-        quizData.sections.flatMap(s => s.questions).forEach(q => {
-          // Gather checked inputs for each question
-          const selector = isMulti 
-            ? `input[name="${q.id}[]"]:checked`
-            : `input[name="${q.id}"]:checked`;
-          document.querySelectorAll(selector).forEach(inp => {
-            counts[inp.value] = (counts[inp.value] || 0) + 1;
+
+        quizData.sections.forEach(section => {
+          const isMulti = multiSelectSections.includes(section.section);
+
+          section.questions.forEach(q => {
+            if (isMulti) {
+              // gather all checked checkboxes
+              document.querySelectorAll(`input[name="${q.id}[]"]:checked`)
+                .forEach(inp => counts[inp.value]++);
+            } else {
+              // single radio selection
+              const sel = document.querySelector(`input[name="${q.id}"]:checked`);
+              if (sel) counts[sel.value]++;
+            }
           });
         });
 
-        // Determine primary/secondary and render results as before...
-        /* ... */
+        // Determine primary and secondary patterns
+        const sorted = Object.entries(counts).sort((a,b) => b[1] - a[1]);
+        const primary = sorted[0][0];
+        const secondary = sorted[1][1] > 0 ? sorted[1][0] : '';
+        const key = `${primary}_${secondary}`;
+        
+        // Your pre‐defined resultsMap goes here…
+        const result = resultsMap[key] || resultsMap[`${primary}_`];
+
+        // Render the narrative
+        const r = document.getElementById('results');
+        r.innerHTML = `
+          <h3>${result.title}</h3>
+          <p>${result.description}</p>
+          <p><strong>Next Steps:</strong> ${result.nextSteps}</p>`;
+        r.scrollIntoView({ behavior: 'smooth' });
       });
     })
-    .catch(err => console.error("Error loading quiz data:", err));
+    .catch(err => console.error('Error loading quiz data:', err));
 </script>
+
 
         // 3. Define result narratives
         const resultsMap = {
