@@ -33,7 +33,7 @@ h2 {
   padding-bottom: 0.25rem;
 }
 p {
-  font-size: 1rem;
+  font-size: 2rem;
   margin: .5rem 0 0.5rem;
   font-weight: bold;
   color: var(--accent);
@@ -47,6 +47,7 @@ label {
   align-items: flex-start;
   margin: 0.5rem 0.5rem;
   font-size: .5rem;
+  padding-bottom: 0.25rem;
 }
 
 input[type="radio"],
