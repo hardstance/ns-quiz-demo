@@ -1,0 +1,118 @@
+Section,QID,Question Text,Option Key,Option Text,Category
+Embodiment Assessment,EA1_Touch,Regarding touch:,A,"I rarely notice sensations like fabric on my skin, or I often don’t register temperature changes until they are extreme.",Hypoembodied
+Embodiment Assessment,EA1_Touch,Regarding touch:,B,"I sometimes notice sensations but don’t always feel them in the moment (e.g., brushing against something).",Regulated Embodiment
+Embodiment Assessment,EA1_Touch,Regarding touch:,C,I’m often very aware of the way fabric or textures feel against my skin and can notice temperature changes easily.,Regulated Embodiment
+Embodiment Assessment,EA1_Touch,Regarding touch:,D,"I am highly sensitive to touch and temperature, often feeling every change, even subtle ones.",Hyperembodied
+Embodiment Assessment,EA2_Interoception,"How aware are you of your internal body signals (hunger, thirst, fatigue, etc.)?",A,I rarely notice my body’s signals until they become intense or overwhelming.,Hypoembodied
+Embodiment Assessment,EA2_Interoception,"How aware are you of your internal body signals (hunger, thirst, fatigue, etc.)?",B,"I’m sometimes aware of internal signals, but I often miss them until they escalate.",Regulated Embodiment
+Embodiment Assessment,EA2_Interoception,"How aware are you of your internal body signals (hunger, thirst, fatigue, etc.)?",C,"I can usually sense my body’s needs (hunger, rest) when they are moderate.",Regulated Embodiment
+Embodiment Assessment,EA2_Interoception,"How aware are you of your internal body signals (hunger, thirst, fatigue, etc.)?",D,"I am acutely aware of my body’s needs, even subtle ones, and respond promptly.",Hyperembodied
+Embodiment Assessment,EA3_Proprioception,"How aware are you of your body’s position in space (e.g., when walking or moving)?",A,"I often feel “disconnected” from my body’s movements, sometimes bumping into things without noticing.",Hypoembodied
+Embodiment Assessment,EA3_Proprioception,"How aware are you of your body’s position in space (e.g., when walking or moving)?",B,I am occasionally aware of my body position but tend to lose track when I’m distracted.,Regulated Embodiment
+Embodiment Assessment,EA3_Proprioception,"How aware are you of your body’s position in space (e.g., when walking or moving)?",C,"I feel pretty grounded and aware of my body’s movements, noticing when I shift position.",Regulated Embodiment
+Embodiment Assessment,EA3_Proprioception,"How aware are you of your body’s position in space (e.g., when walking or moving)?",D,"I have a strong sense of my body’s position and movements, even when I’m engaged in other tasks.",Hyperembodied
+Embodiment Assessment,EA4_Neuroception,When entering new spaces or situations:,A,"I rarely feel any sense of discomfort or “alertness,” even in unfamiliar environments.",Hypoembodied
+Embodiment Assessment,EA4_Neuroception,When entering new spaces or situations:,B,I feel some level of awareness when entering new spaces but it’s usually mild.,Regulated Embodiment
+Embodiment Assessment,EA4_Neuroception,When entering new spaces or situations:,C,"I often scan my environment for potential threats or shifts in safety, noticing subtle cues.",Regulated Embodiment
+Embodiment Assessment,EA4_Neuroception,When entering new spaces or situations:,D,"I am hyper-aware of potential threats and feel an immediate response to shifts in my environment, even if they are small.",Hyperembodied
+Embodiment Reflections,ER1,"When problem-solving or stressed, where do you focus your attention?",A,"Only in my head (thoughts, ideas)",Floating Head
+Embodiment Reflections,ER1,"When problem-solving or stressed, where do you focus your attention?",B,"Entirely in my body (physical sensations, feelings)",Deeply Embodied
+Embodiment Reflections,ER2,"When in pain or discomfort, how do you usually respond?",A,Ignore it and push through,Floating Head
+Embodiment Reflections,ER2,"When in pain or discomfort, how do you usually respond?",B,Explore the sensation to understand it better,Deeply Embodied
+Embodiment Reflections,ER3,How often do you feel 'in your body' vs 'in your head'?,A,Rarely or never in my body,Floating Head
+Embodiment Reflections,ER3,How often do you feel 'in your body' vs 'in your head'?,B,Fully grounded in my body most of the time,Deeply Embodied
+Embodiment Reflections,ER4,Comfort exploring sensations without judgment?,A,Not at all / Rarely,Floating Head
+Embodiment Reflections,ER4,Comfort exploring sensations without judgment?,B,Often / Always,Deeply Embodied
+Embodiment Reflections,ER5,Ease describing body sensations to someone else?,A,Very difficult / Difficult,Floating Head
+Embodiment Reflections,ER5,Ease describing body sensations to someone else?,B,Easy / Very easy,Deeply Embodied
+Embodiment Reflections,ER6,Rely on logic or trust your gut when deciding?,A,Rely on logic or outside advice,Floating Head
+Embodiment Reflections,ER6,Rely on logic or trust your gut when deciding?,B,Often trust gut feelings or physical instincts,Deeply Embodied
+Embodiment Reflections,ER7,React to discomfort with distraction or presence?,A,Distract with activities like working or scrolling,Floating Head
+Embodiment Reflections,ER7,React to discomfort with distraction or presence?,B,Stay present with my body even when uncomfortable,Deeply Embodied
+Somatic Patterns,SP1_EyesDaily,How do your eyes feel during the day?,A,"I often squint, even when I don’t need to.",Fight
+Somatic Patterns,SP1_EyesDaily,How do your eyes feel during the day?,B,I find myself looking away or avoiding eye contact.,Flight
+Somatic Patterns,SP1_EyesDaily,How do your eyes feel during the day?,C,"My vision feels blurry or unfocused at times, even without a medical issue.",Freeze
+Somatic Patterns,SP1_EyesDaily,How do your eyes feel during the day?,D,I feel comfortable and open making eye contact.,Regulated
+Somatic Patterns,SP2_EyesSocial,What do you notice about your gaze in social situations?,A,"My gaze feels sharp or intense, like I’m on high alert.",Fight
+Somatic Patterns,SP2_EyesSocial,What do you notice about your gaze in social situations?,B,I tend to look around or scan the room frequently.,Flight
+Somatic Patterns,SP2_EyesSocial,What do you notice about your gaze in social situations?,C,I feel my eyes drooping or avoiding looking at others.,Freeze
+Somatic Patterns,SP2_EyesSocial,What do you notice about your gaze in social situations?,D,I can maintain eye contact naturally without effort.,Regulated
+Somatic Patterns,SP3_Head,How does your head feel in relation to your posture?,A,I often feel my head pushing forward or craning out.,Fight
+Somatic Patterns,SP3_Head,How does your head feel in relation to your posture?,B,I find myself turning my head frequently or avoiding holding it still.,Flight
+Somatic Patterns,SP3_Head,How does your head feel in relation to your posture?,C,"My head feels heavy, like it’s being pulled down.",Freeze
+Somatic Patterns,SP3_Head,How does your head feel in relation to your posture?,D,My head feels balanced on my shoulders.,Regulated
+Somatic Patterns,SP4_Shoulders,What do you notice in your shoulders?,A,"My shoulders often feel tight or braced, like I’m ready to act.",Fight
+Somatic Patterns,SP4_Shoulders,What do you notice in your shoulders?,B,I shrug or move my shoulders often without realizing it.,Flight
+Somatic Patterns,SP4_Shoulders,What do you notice in your shoulders?,C,My shoulders feel drooped or collapsed inward.,Freeze
+Somatic Patterns,SP4_Shoulders,What do you notice in your shoulders?,D,My shoulders feel relaxed and aligned.,Regulated
+Somatic Patterns,SP5_Gait,How would you describe your walking or standing posture?,A,I tend to walk or stand with a stiff or rigid posture.,Fight
+Somatic Patterns,SP5_Gait,How would you describe your walking or standing posture?,B,"I feel light on my feet, almost like I’m avoiding the ground.",Flight
+Somatic Patterns,SP5_Gait,How would you describe your walking or standing posture?,C,"I feel heavy, like I’m sinking into the ground.",Freeze
+Somatic Patterns,SP5_Gait,How would you describe your walking or standing posture?,D,I feel grounded and steady when I walk or stand.,Regulated
+Somatic Patterns,SP6_LongSit,"When you sit or stand for long periods, how does your body react?",A,"My legs feel tense, as if they’re ready to move at any moment.",Fight
+Somatic Patterns,SP6_LongSit,"When you sit or stand for long periods, how does your body react?",B,I find myself fidgeting or needing to adjust often.,Flight
+Somatic Patterns,SP6_LongSit,"When you sit or stand for long periods, how does your body react?",C,My lower body feels numb or disconnected.,Freeze
+Somatic Patterns,SP6_LongSit,"When you sit or stand for long periods, how does your body react?",D,"My posture feels natural, and I can stay comfortable.",Regulated
+Somatic Patterns,SP7_BreathGeneral,How does your breathing feel most of the time?,A,"Deep, forceful, or labored, like I’m preparing for action or bracing myself.",Fight
+Somatic Patterns,SP7_BreathGeneral,How does your breathing feel most of the time?,B,"Quick and uneven, often tied to feeling rushed or restless.",Flight
+Somatic Patterns,SP7_BreathGeneral,How does your breathing feel most of the time?,C,"Shallow and slow, as if I’m stuck or holding back.",Freeze
+Somatic Patterns,SP7_BreathGeneral,How does your breathing feel most of the time?,D,"Deep and steady, with a sense of ease and balance.",Regulated
+Somatic Patterns,SP8_BreathStress,"When you’re under stress, how does your breathing change?",A,"It becomes tight or high in my chest, like the air is stuck in my throat.",Fight
+Somatic Patterns,SP8_BreathStress,"When you’re under stress, how does your breathing change?",B,"It speeds up and feels shallow, like I’m struggling to catch my breath.",Flight
+Somatic Patterns,SP8_BreathStress,"When you’re under stress, how does your breathing change?",C,It feels like I stop breathing or hold my breath.,Freeze
+Somatic Patterns,SP8_BreathStress,"When you’re under stress, how does your breathing change?",D,"It stays steady, even under pressure.",Regulated
+Somatic Patterns,SP9_SleepPosition,What position do you typically sleep in?,A,"Tense or curled up, like I’m protecting myself.",Fight
+Somatic Patterns,SP9_SleepPosition,What position do you typically sleep in?,B,"Restless, frequently changing positions.",Flight
+Somatic Patterns,SP9_SleepPosition,What position do you typically sleep in?,C,"Heavy and still, almost like I’m stuck in one position.",Freeze
+Somatic Patterns,SP9_SleepPosition,What position do you typically sleep in?,D,"Relaxed and natural, with ease to adjust if needed.",Regulated
+Somatic Patterns,SP10_WakeFeel,How does your body feel when you wake up?,A,"Stiff, like I’ve been braced all night.",Fight
+Somatic Patterns,SP10_WakeFeel,How does your body feel when you wake up?,B,"Restless, like I didn’t fully relax during sleep.",Flight
+Somatic Patterns,SP10_WakeFeel,How does your body feel when you wake up?,C,"Heavy or sluggish, like it’s hard to get moving.",Freeze
+Somatic Patterns,SP10_WakeFeel,How does your body feel when you wake up?,D,Refreshed and ready to start the day.,Regulated
+Somatic Patterns,SP11_Sit,What do you notice about your body when you’re sitting?,A,I feel myself bracing or holding tension in my core or back.,Fight
+Somatic Patterns,SP11_Sit,What do you notice about your body when you’re sitting?,B,I shift positions often or feel the need to move frequently.,Flight
+Somatic Patterns,SP11_Sit,What do you notice about your body when you’re sitting?,C,I slouch or feel my body collapsing into the chair.,Freeze
+Somatic Patterns,SP11_Sit,What do you notice about your body when you’re sitting?,D,I sit with ease and feel supported by my posture.,Regulated
+Somatic Patterns,SP12_PhysActivity,"When you’re doing physical activity, what feels true?",A,"I over-engage my muscles, feeling tense or rigid.",Fight
+Somatic Patterns,SP12_PhysActivity,"When you’re doing physical activity, what feels true?",B,I move quickly or find it hard to slow down.,Flight
+Somatic Patterns,SP12_PhysActivity,"When you’re doing physical activity, what feels true?",C,I feel sluggish or disconnected from the activity.,Freeze
+Somatic Patterns,SP12_PhysActivity,"When you’re doing physical activity, what feels true?",D,I feel aligned and connected to my movements.,Regulated
+Somatic Patterns,SP13_HandsDay,What do you notice about your hands during the day?,A,"My hands often feel clenched, like they’re ready to grip something.",Fight
+Somatic Patterns,SP13_HandsDay,What do you notice about your hands during the day?,B,I fidget with objects or move my fingers often without realizing it.,Flight
+Somatic Patterns,SP13_HandsDay,What do you notice about your hands during the day?,C,"My hands feel limp or heavy, like they lack energy.",Freeze
+Somatic Patterns,SP13_HandsDay,What do you notice about your hands during the day?,D,"My hands feel relaxed, and I only use them when needed.",Regulated
+Somatic Patterns,SP14_HandsExpr,How do you use your hands when expressing yourself?,A,"I use sharp, forceful gestures or make fists without noticing.",Fight
+Somatic Patterns,SP14_HandsExpr,How do you use your hands when expressing yourself?,B,"My gestures are quick, and I find myself using my hands a lot.",Flight
+Somatic Patterns,SP14_HandsExpr,How do you use your hands when expressing yourself?,C,"My movements are slow, or I avoid using my hands when speaking.",Freeze
+Somatic Patterns,SP14_HandsExpr,How do you use your hands when expressing yourself?,D,My hand gestures feel natural and flow with my speech.,Regulated
+Somatic Patterns,SP15_JawDay,What do you notice about your jaw during the day?,A,"My jaw feels tight, clenched, or overactive.",Fight
+Somatic Patterns,SP15_JawDay,What do you notice about your jaw during the day?,B,I catch myself grinding my teeth or moving my jaw frequently.,Flight
+Somatic Patterns,SP15_JawDay,What do you notice about your jaw during the day?,C,"My jaw feels slack, heavy, or disconnected.",Freeze
+Somatic Patterns,SP15_JawDay,What do you notice about your jaw during the day?,D,My jaw feels relaxed and balanced.,Regulated
+Somatic Patterns,SP16_MouthStress,"When you’re thinking or stressed, what do you notice about your mouth?",A,I press my lips together tightly or clench my teeth.,Fight
+Somatic Patterns,SP16_MouthStress,"When you’re thinking or stressed, what do you notice about your mouth?",B,"I chew on things (e.g., pens, nails) or move my mouth restlessly.",Flight
+Somatic Patterns,SP16_MouthStress,"When you’re thinking or stressed, what do you notice about your mouth?",C,"My mouth feels dry or sluggish, and I avoid speaking.",Freeze
+Somatic Patterns,SP16_MouthStress,"When you’re thinking or stressed, what do you notice about your mouth?",D,My mouth feels comfortable and ready to engage when I need to.,Regulated
+Adaptive Resilience,AR1,I have survived by:,,"Refusing to admit or fully acknowledge certain emotions or realities, even when they were clear to others.",
+Adaptive Resilience,AR2,I have survived by:,,Pushing uncomfortable thoughts or emotions out of my awareness to avoid dealing with them.,
+Adaptive Resilience,AR3,I have survived by:,,Noticing feelings or behaviors in others that may actually reflect something within me.,
+Adaptive Resilience,AR4,I have survived by:,,"Redirecting my emotions, like frustration or anger, toward something or someone unrelated.",
+Adaptive Resilience,AR5,I have survived by:,,"Explaining or justifying my actions with logical reasons, even when the real reason might be uncomfortable to face.",
+Adaptive Resilience,AR6,I have survived by:,,"Channeling intense emotions into creative projects, hobbies, or physical activities.",
+Adaptive Resilience,AR7,I have survived by:,,Falling back into behaviors or habits that remind me of how I handled stress as a child.,
+Adaptive Resilience,AR8,I have survived by:,,"Focusing on facts, logic, or analysis to avoid fully engaging with difficult emotions.",
+Adaptive Resilience,AR9,I have survived by:,,Acting in ways that are the opposite of how I truly feel in order to protect myself or others.,
+Adaptive Resilience,AR10,I have survived by:,,"Avoiding situations, people, or emotions that feel too uncomfortable or difficult to handle.",
+Adaptive Resilience,AR11,I have survived by:,,Frequently pointing out flaws or faults in others to avoid looking at or confronting my own insecurities.,
+Adaptive Resilience,AR12,I have survived by:,,Harshly judging or belittling myself to avoid facing deeper emotional pain or fear of not being enough.,
+Health Considerations,HC1,Check any conditions you have been diagnosed with or experienced:,,"Anxiety Disorders (e.g., GAD, panic disorder, social anxiety)",
+Health Considerations,HC2,Check any conditions you have been diagnosed with or experienced:,,"Depression (e.g., major depressive disorder, dysthymia)",
+Health Considerations,HC3,Check any conditions you have been diagnosed with or experienced:,,PTSD or Complex PTSD,
+Health Considerations,HC4,Check any conditions you have been diagnosed with or experienced:,,ADHD or Autism Spectrum,
+Health Considerations,HC5,Check any conditions you have been diagnosed with or experienced:,,Chronic Fatigue Syndrome / ME,
+Health Considerations,HC6,Check any conditions you have been diagnosed with or experienced:,,Fibromyalgia,
+Health Considerations,HC7,Check any conditions you have been diagnosed with or experienced:,,Irritable Bowel Syndrome (IBS),
+Health Considerations,HC8,Check any conditions you have been diagnosed with or experienced:,,"Dysautonomia (e.g., POTS, orthostatic hypotension)",
+Health Considerations,HC9,Check any conditions you have been diagnosed with or experienced:,,Long Covid / Post-viral Syndrome,
+Health Considerations,HC10,Check any conditions you have been diagnosed with or experienced:,,Hypermobility / Ehlers-Danlos Syndrome,
+Health Considerations,HC11,Check any conditions you have been diagnosed with or experienced:,,Hyperthyroidism or Hypothyroidism,
