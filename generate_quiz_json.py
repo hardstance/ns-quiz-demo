@@ -4,7 +4,11 @@ import json
 # 1. Read the exported CSV
 df = pd.read_csv('quiz_sheet.csv')
 
-# 2. Build the nested JSON structure
+# 2. Ensure no NaNs in key or category columns
+df['Option Key'] = df['Option Key'].fillna('').astype(str)
+df['Category']   = df['Category'].fillna('').astype(str)
+
+# 3. Build the nested JSON structure
 sections = []
 for section, sec_df in df.groupby('Section'):
     questions = []
@@ -22,9 +26,12 @@ for section, sec_df in df.groupby('Section'):
             'text': question_text,
             'options': options
         })
-    sections.append({'section': section, 'questions': questions})
+    sections.append({
+        'section': section,
+        'questions': questions
+    })
 
-# 3. Export to JSON
+# 4. Export to JSON
 output = {'sections': sections}
 with open('quiz_structure.json', 'w') as f:
     json.dump(output, f, indent=2)
