@@ -1,4 +1,4 @@
-/* 1. Import your site’s font(s) */
+ /* 1. Import your site’s font(s) */
 @import url('https://fonts.googleapis.com/css2?family=Cambo:wght@400;700&display=swap');
 
 /* 2. Global settings */
@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 1rem 1rem;
   max-width: 600px;
-  font-family: Cambo, serif;
+  font-family: Cambo,courier, serif;
   background-color: var(--background);
   color: var(--text-color);
   line-height: 1.6;
