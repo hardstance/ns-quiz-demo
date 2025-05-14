@@ -17,167 +17,138 @@
   <button id="submitQuiz">See My Results</button>
   <div id="results"></div>
 
-  <!-- 1) Load and render the quiz -->
   <script>
-    document.getElementById('submitQuiz').addEventListener('click', () => {
-  const counts = { Fight:0, Flight:0, Freeze:0, Regulation:0 };
-  quizData.sections.forEach(section => {
-    const isMulti = multiSelectSections.includes(section.section);
-    section.questions.forEach(q => {
-      if (isMulti) {
-        document.querySelectorAll(`input[name="${q.id}[]"]:checked`)
-          .forEach(inp => counts[inp.value]++);
-      } else {
-        const sel = document.querySelector(`input[name="${q.id}"]:checked`);
-        if (sel) counts[sel.value]++;
+    // 1) Define which sections use checkboxes
+    const multiSelectSections = [
+      'Adaptive Resilience',
+      'Health Considerations'
+    ];
+
+    // 2) Define all 10 result narratives
+    const resultsMap = {
+      "Fight_Regulation": {
+        title: "Grounded Protector",
+        description: "You often carry tension—ready to spring into action—but you also have a steady center. You know how to push through discomfort, yet can tap into calm when needed.",
+        nextSteps: "Try gentle chest‑opening stretches and notice how easily you can shift from “on guard” to “at ease.”"
+      },
+      "Flight_Regulation": {
+        title: "Balanced Explorer",
+        description: "You’re naturally curious and energized, but you also know how to drop into presence when it matters.",
+        nextSteps: "Anchor your energy with a 3‑breath check‑in before jumping into your next task or adventure."
+      },
+      "Freeze_Regulation": {
+        title: "Steady Observer",
+        description: "You hold steady—even under stress—and are comfortable with quiet or stillness. That steadiness can protect you, but can also hide tension.",
+        nextSteps: "Invite gentle movement breaks (e.g., wrist rolls, shoulder shrugs) to remind your body it’s safe to soften."
+      },
+      "Regulation_": {
+        title: "Harmonious Integrator",
+        description: "You have a strong capacity for balance: you notice tension, restlessness, or stillness—and then bring yourself back to center.",
+        nextSteps: "Alternate dynamic movement (dance, walking) with restful breathing to honor your flexibility."
+      },
+      "Fight_": {
+        title: "Tense Sentinel",
+        description: "You’re highly alert and ready for challenge. Your body often braces as if waiting for something.",
+        nextSteps: "Explore “softening” techniques—like exhaling fully on a sigh or using gentle self‑hug holds—to practice letting your guard down."
+      },
+      "Flight_": {
+        title: "Restless Voyager",
+        description: "You’re always in motion—mentally and physically—and it’s hard to land into rest.",
+        nextSteps: "Try micro‑pauses: stand still for 30 seconds, root your feet, then gently resume activity."
+      },
+      "Freeze_": {
+        title: "Braced Guardian",
+        description: "You hold yourself tightly, bracing your torso and chest. It feels protective, but can leave you disconnected from ease.",
+        nextSteps: "Begin with small “unfreezing” gestures—soft neck rolls or chest‑softening breaths—to remind your body it can move."
+      },
+      "Fight_Flight": {
+        title: "Urgent Reactor",
+        description: "You switch between gearing up (fight) and needing to escape (flight). That loop can feel chaotic, but shows you’re highly responsive.",
+        nextSteps: "Place a hand on your heart before responding to break the loop and choose your next move."
+      },
+      "Flight_Freeze": {
+        title: "Anxious Lurker",
+        description: "You oscillate between restless escape and frozen stillness. That swing shows how deeply your body craves both safety and movement.",
+        nextSteps: "Practice slow “ground‑and‑release” cycles: inhale grounding, exhale softening."
+      },
+      "Fight_Freeze": {
+        title: "Rigid Defender",
+        description: "You brace for action and for shutdown, holding tight even when still—leaving little space for reset.",
+        nextSteps: "Explore gentle lengthening movements (like side stretches) with slow, easy breath to create space."
       }
-    });
-  });
-  // define which sections use checkboxes
-  const multiSelectSections = ['Adaptive Resilience','Health Considerations'];
+    };
 
-    // try the exact combo
-let result = resultsMap[key];
-// then try just the primary pattern
-if (!result) result = resultsMap[`${primary}_`];
-// if we still don’t have anything, fall back to a generic “Regulation” profile
-if (!result) result = resultsMap['Regulation_'];
+    // 3) Fetch the quiz data and render
+    fetch('quiz_structure.json')
+      .then(r => r.json())
+      .then(quizData => {
+        const quizContainer = document.getElementById('quiz');
 
-console.log('lookup key', key, 'primary fallback', primary + '_', 'result', result);
-
-  const resultsMap = {
-   // 3. Define result narratives
-        const resultsMap = {
-          "Fight_Regulation": {
-            title: "Grounded Protector",
-            description: "You often carry tension—ready to spring into action—but you also have a steady center. You know how to push through discomfort, yet can tap into calm when needed.",
-            nextSteps: "Try gentle chest‑opening stretches and notice how easily you can shift from “on guard” to “at ease.”"
-          },
-          "Flight_Regulation": {
-            title: "Balanced Explorer",
-            description: "You’re naturally curious and energized, but you also know how to drop into presence when it matters.",
-            nextSteps: "Anchor your energy with a 3‑breath check‑in before jumping into your next task or adventure."
-          },
-          "Freeze_Regulation": {
-            title: "Steady Observer",
-            description: "You hold steady—even under stress—and are comfortable with quiet or stillness. That steadiness can protect you, but can also hide tension.",
-            nextSteps: "Invite gentle movement breaks (e.g., wrist rolls, shoulder shrugs) to remind your body it’s safe to soften."
-          },
-          "Regulation_": {
-            title: "Harmonious Integrator",
-            description: "You have a strong capacity for balance: you notice tension, restlessness, or stillness—and then bring yourself back to center.",
-            nextSteps: "Alternate dynamic movement (dance, walking) with restful breathing to honor your flexibility."
-          },
-          "Fight_": {
-            title: "Tense Sentinel",
-            description: "You’re highly alert and ready for challenge. Your body often braces as if waiting for something.",
-            nextSteps: "Explore “softening” techniques—like exhaling fully on a sigh or using gentle self‑hug holds—to practice letting your guard down."
-          },
-          "Flight_": {
-            title: "Restless Voyager",
-            description: "You’re always in motion—mentally and physically—and it’s hard to land into rest.",
-            nextSteps: "Try micro‑pauses: stand still for 30 seconds, root your feet, then gently resume activity."
-          },
-          "Freeze_": {
-            title: "Braced Guardian",
-            description: "You hold yourself tightly, bracing your torso and chest. It feels protective, but can leave you disconnected from ease.",
-            nextSteps: "Begin with small “unfreezing” gestures—soft neck rolls or chest‑softening breaths—to remind your body it can move."
-          },
-          "Fight_Flight": {
-            title: "Urgent Reactor",
-            description: "You switch between gearing up (fight) and needing to escape (flight). That loop can feel chaotic, but shows you’re highly responsive.",
-            nextSteps: "Place a hand on your heart before responding to break the loop and choose your next move."
-          },
-          "Flight_Freeze": {
-            title: "Anxious Lurker",
-            description: "You oscillate between restless escape and frozen stillness. That swing shows how deeply your body craves both safety and movement.",
-            nextSteps: "Practice slow “ground‑and‑release” cycles: inhale grounding, exhale softening."
-          },
-          "Fight_Freeze": {
-            title: "Rigid Defender",
-            description: "You brace for action and for shutdown, holding tight even when still—leaving little space for reset.",
-            nextSteps: "Explore gentle lengthening movements (like side stretches) with slow, easy breath to create space."
-          }
-        };
-
-    }
-  };
-
-  // fetch and render
-  fetch('quiz_structure.json')
-    .then(r => r.json())
-    .then(quizData => {
-      const quizContainer = document.getElementById('quiz');
-
-      quizData.sections.forEach(section => {
-        const isMulti = multiSelectSections.includes(section.section);
-        const secEl = document.createElement('section');
-        secEl.innerHTML = `<h2>${section.section}</h2>`;
-
-        section.questions.forEach(q => {
-          const qEl = document.createElement('div');
-          qEl.innerHTML = `<p>${q.text}</p>`;
-
-          q.options.forEach(opt => {
-            const type = isMulti ? 'checkbox' : 'radio';
-            const nameAttr = isMulti ? `${q.id}[]` : q.id;
-            qEl.innerHTML += `
-              <label>
-                <input type="${type}" name="${nameAttr}" value="${opt.category}">
-                 ${opt.text}
-              </label><br>`;
-          });
-
-          secEl.appendChild(qEl);
-        });
-
-        quizContainer.appendChild(secEl);
-      });
-
-      // wire up submit
-      document.getElementById('submitQuiz').addEventListener('click', () => {
-        const counts = {Fight:0,Flight:0,Freeze:0,Regulation:0};
-
+        // Render each section
         quizData.sections.forEach(section => {
           const isMulti = multiSelectSections.includes(section.section);
+          const secEl = document.createElement('section');
+          secEl.innerHTML = `<h2>${section.section}</h2>`;
+
           section.questions.forEach(q => {
-            if (isMulti) {
-              document.querySelectorAll(`input[name="${q.id}[]"]:checked`)
-                .forEach(inp => { counts[inp.value]++; });
-            } else {
-              const sel = document.querySelector(`input[name="${q.id}"]:checked`);
-              if (sel) counts[sel.value]++;
-            }
+            const qEl = document.createElement('div');
+            qEl.innerHTML = `<p>${q.text}</p>`;
+
+            q.options.forEach(opt => {
+              const type = isMulti ? 'checkbox' : 'radio';
+              const nameAttr = isMulti ? `${q.id}[]` : q.id;
+              qEl.innerHTML += `
+                <label>
+                  <input type="${type}" name="${nameAttr}" value="${opt.category}">
+                  ${opt.text}
+                </label><br>`;
+            });
+
+            secEl.appendChild(qEl);
           });
+
+          quizContainer.appendChild(secEl);
         });
 
-        // pick top two
-        const sorted = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
-        const primary = sorted[0][0];
-        const secondary = sorted[1][1]>0 ? sorted[1][0] : '';
-        const key = `${primary}_${secondary}`;
-  // 1) try exact combo, 2) try just primary, 3) fallback to Regulation_
-  let result = resultsMap[key] 
-            || resultsMap[`${primary}_`] 
-            || resultsMap['Regulation_'];
+        // 4) Handle submission & scoring
+        document.getElementById('submitQuiz').addEventListener('click', () => {
+          const counts = { Fight:0, Flight:0, Freeze:0, Regulation:0 };
 
-        const r = document.getElementById('results');
-  r.innerHTML = `
-    <h3>${result.title}</h3>
-    <p>${result.description}</p>
-    <p><strong>Next Steps:</strong> ${result.nextSteps}</p>`;
-  r.scrollIntoView({behavior:'smooth'});
+          quizData.sections.forEach(section => {
+            const isMulti = multiSelectSections.includes(section.section);
+            section.questions.forEach(q => {
+              if (isMulti) {
+                document.querySelectorAll(`input[name="${q.id}[]"]:checked`)
+                  .forEach(inp => counts[inp.value]++);
+              } else {
+                const sel = document.querySelector(`input[name="${q.id}"]:checked`);
+                if (sel) counts[sel.value]++;
+              }
+            });
+          });
 
-        const result = resultsMap[key] || resultsMap[`${primary}_`];
-        const out = document.getElementById('results');
-        out.innerHTML = `
-          <h3>${result.title}</h3>
-          <p>${result.description}</p>
-          <p><strong>Next Steps:</strong> ${result.nextSteps}</p>`;
-        out.scrollIntoView({behavior:'smooth'});
-      });
-    })
-    .catch(err => console.error('Error loading quiz:', err));
+          // Determine primary & secondary
+          const sorted = Object.entries(counts).sort((a,b) => b[1] - a[1]);
+          const primary   = sorted[0][0];
+          const secondary = sorted[1][1] > 0 ? sorted[1][0] : '';
+          const key       = `${primary}_${secondary}`;
+
+          // Lookup result with fallback to primary or Regulation
+          const result = resultsMap[key]
+                       || resultsMap[`${primary}_`]
+                       || resultsMap['Regulation_'];
+
+          // Render the narrative
+          const r = document.getElementById('results');
+          r.innerHTML = `
+            <h3>${result.title}</h3>
+            <p>${result.description}</p>
+            <p><strong>Next Steps:</strong> ${result.nextSteps}</p>`;
+          r.scrollIntoView({ behavior:'smooth' });
+        });
+      })
+      .catch(err => console.error('Error loading quiz:', err));
   </script>
+
 </body>
 </html>
