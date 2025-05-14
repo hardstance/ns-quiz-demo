@@ -1,0 +1,129 @@
+<script type="application/json" id="quiz-data">
+  { …your JSON here… }
+</script>
+<!-- Place this in your Canva custom‑code block -->
+<div id="quiz"></div>
+<button id="submitQuiz">See My Results</button>
+<div id="results"></div>
+
+<script type="application/json" id="quiz-data">
+  /* Paste the full quiz_structure.json here */
+</script>
+
+<script>
+  // 1. Load the quiz data
+  const quizData = JSON.parse(document.getElementById('quiz-data').textContent);
+  const quizContainer = document.getElementById('quiz');
+
+  // 2. Render each section + question
+  quizData.sections.forEach(section => {
+    const secEl = document.createElement('section');
+    secEl.innerHTML = `<h2>${section.section}</h2>`;
+    section.questions.forEach(q => {
+      const qEl = document.createElement('div');
+      qEl.innerHTML = `<p>${q.text}</p>`;
+      q.options.forEach(opt => {
+        const id = `${q.id}_${opt.key}`;
+        qEl.innerHTML += `
+          <label>
+            <input type="radio" name="${q.id}" id="${id}" value="${opt.category}">
+            ${opt.text}
+          </label><br>`;
+      });
+      secEl.appendChild(qEl);
+    });
+    quizContainer.appendChild(secEl);
+  });
+
+  // 3. Define our 10 profiles
+  const resultsMap = {
+    // Fight + Regulation
+    "Fight_Regulation": {
+      title: "Grounded Protector",
+      description: "You often carry tension—ready to spring into action—but you also have a steady center. You know how to push through discomfort, yet can tap into calm when needed.",
+      nextSteps: "Try gentle chest‑opening stretches and notice how easily you can shift from “on guard” to “at ease.”"
+    },
+    // Flight + Regulation
+    "Flight_Regulation": {
+      title: "Balanced Explorer",
+      description: "You’re naturally curious and energized, but you also know how to drop into presence when it matters.",
+      nextSteps: "Anchor your energy with a 3‑breath check‑in before jumping into your next task or adventure."
+    },
+    // Freeze + Regulation
+    "Freeze_Regulation": {
+      title: "Steady Observer",
+      description: "You hold steady—even under stress—and are comfortable with quiet or stillness. That steadiness can protect you, but can also hide tension.",
+      nextSteps: "Invite gentle movement breaks (e.g., wrist rolls, shoulder shrugs) to remind your body it’s safe to soften."
+    },
+    // Regulation dominant
+    "Regulation_": {
+      title: "Harmonious Integrator",
+      description: "You have a strong capacity for balance: you notice tension, restlessness, or stillness—and then bring yourself back to center.",
+      nextSteps: "Alternate dynamic movement (dance, walking) with restful breathing to honor your flexibility."
+    },
+    // Fight dominant, low Reg
+    "Fight_": {
+      title: "Tense Sentinel",
+      description: "You’re highly alert and ready for challenge. Your body often braces as if waiting for something.",
+      nextSteps: "Explore “softening” techniques—like exhaling fully on a sigh or using gentle self‑hug holds—to practice letting your guard down."
+    },
+    // Flight dominant, low Reg
+    "Flight_": {
+      title: "Restless Voyager",
+      description: "You’re always in motion—mentally and physically—and it’s hard to land into rest.",
+      nextSteps: "Try micro‑pauses: stand still for 30 seconds, root your feet, then gently resume activity."
+    },
+    // Freeze dominant, low Reg
+    "Freeze_": {
+      title: "Braced Guardian",
+      description: "You hold yourself tightly, bracing your torso and chest. It feels protective, but can leave you disconnected from ease.",
+      nextSteps: "Begin with small “unfreezing” gestures—soft neck rolls or chest‑softening breaths—to remind your body it can move."
+    },
+    // Fight + Flight
+    "Fight_Flight": {
+      title: "Urgent Reactor",
+      description: "You switch between gearing up (fight) and needing to escape (flight). That loop can feel chaotic, but shows you’re highly responsive.",
+      nextSteps: "Place a hand on your heart before responding to break the loop and choose your next move."
+    },
+    // Flight + Freeze
+    "Flight_Freeze": {
+      title: "Anxious Lurker",
+      description: "You oscillate between restless escape and frozen stillness. That swing shows how deeply your body craves both safety and movement.",
+      nextSteps: "Practice slow “ground‑and‑release” cycles: inhale grounding, exhale softening."
+    },
+    // Fight + Freeze
+    "Fight_Freeze": {
+      title: "Rigid Defender",
+      description: "You brace for action and for shutdown, holding tight even when still—leaving little space for reset.",
+      nextSteps: "Explore gentle lengthening movements (like side stretches) with slow, easy breath to create space."
+    }
+  };
+
+  // 4. When they click "See My Results"
+  document.getElementById('submitQuiz').addEventListener('click', () => {
+    const counts = { Fight:0, Flight:0, Freeze:0, Regulation:0 };
+    quizData.sections.flatMap(s => s.questions).forEach(q => {
+      const selected = document.querySelector(`input[name="${q.id}"]:checked`);
+      if (selected) counts[selected.value]++;
+    });
+
+    // Determine primary and secondary
+    const sorted = Object.entries(counts).sort((a,b) => b[1] - a[1]);
+    const primary = sorted[0][0];
+    const secondary = sorted[1][1] > 0 ? sorted[1][0] : "";
+
+    // Lookup narrative
+    const key = `${primary}_${secondary}`;
+    const result = resultsMap[key] || resultsMap[`${primary}_`];
+
+    // Render result
+    const resEl = document.getElementById('results');
+    resEl.innerHTML = `
+      <h3>${result.title}</h3>
+      <p>${result.description}</p>
+      <p><strong>Next Steps:</strong> ${result.nextSteps}</p>
+    `;
+    // Scroll to results
+    resEl.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
