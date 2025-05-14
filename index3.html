@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NS States Quiz Demo</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
+    section { margin-bottom: 2rem; }
+    button { padding: 0.5rem 1rem; font-size: 1rem; }
+    #results { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+  <h1>Nervous System States Quiz</h1>
+  <div id="quiz"></div>
+  <button id="submitQuiz">See My Results</button>
+  <div id="results"></div>
+
+  <!-- 1) Load and render the quiz -->
+  <script>
+  // define which sections use checkboxes
+  const multiSelectSections = ['Adaptive Resilience','Health Considerations'];
+
+  // your 10 profiles map (abbreviated here—you’ll paste in all 10)
+  const resultsMap = {
+    "Fight_Regulation": {
+      title: "Grounded Protector",
+      description: "You carry tension…",
+      nextSteps: "Try gentle chest‑opens…"
+    },
+    // … all other keys …
+    "Fight_": {
+      title: "Tense Sentinel",
+      description: "...",
+      nextSteps: "..."
+    }
+  };
+
+  // fetch and render
+  fetch('quiz_structure.json')
+    .then(r => r.json())
+    .then(quizData => {
+      const quizContainer = document.getElementById('quiz');
+
+      quizData.sections.forEach(section => {
+        const isMulti = multiSelectSections.includes(section.section);
+        const secEl = document.createElement('section');
+        secEl.innerHTML = `<h2>${section.section}</h2>`;
+
+        section.questions.forEach(q => {
+          const qEl = document.createElement('div');
+          qEl.innerHTML = `<p>${q.text}</p>`;
+
+          q.options.forEach(opt => {
+            const type = isMulti ? 'checkbox' : 'radio';
+            const nameAttr = isMulti ? `${q.id}[]` : q.id;
+            qEl.innerHTML += `
+              <label>
+                <input type="${type}" name="${nameAttr}" value="${opt.category}">
+                 ${opt.text}
+              </label><br>`;
+          });
+
+          secEl.appendChild(qEl);
+        });
+
+        quizContainer.appendChild(secEl);
+      });
+
+      // wire up submit
+      document.getElementById('submitQuiz').addEventListener('click', () => {
+        const counts = {Fight:0,Flight:0,Freeze:0,Regulation:0};
+
+        quizData.sections.forEach(section => {
+          const isMulti = multiSelectSections.includes(section.section);
+          section.questions.forEach(q => {
+            if (isMulti) {
+              document.querySelectorAll(`input[name="${q.id}[]"]:checked`)
+                .forEach(inp => { counts[inp.value]++; });
+            } else {
+              const sel = document.querySelector(`input[name="${q.id}"]:checked`);
+              if (sel) counts[sel.value]++;
+            }
+          });
+        });
+
+        // pick top two
+        const sorted = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+        const primary = sorted[0][0];
+        const secondary = sorted[1][1]>0 ? sorted[1][0] : '';
+        const key = `${primary}_${secondary}`;
+
+        const result = resultsMap[key] || resultsMap[`${primary}_`];
+        const out = document.getElementById('results');
+        out.innerHTML = `
+          <h3>${result.title}</h3>
+          <p>${result.description}</p>
+          <p><strong>Next Steps:</strong> ${result.nextSteps}</p>`;
+        out.scrollIntoView({behavior:'smooth'});
+      });
+    })
+    .catch(err => console.error('Error loading quiz:', err));
+  </script>
+</body>
+</html>
