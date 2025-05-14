@@ -27,6 +27,43 @@
 
         // 2. Render sections + questions
         quizData.sections.forEach(section => {
+  const isMulti = [
+    "Adaptive Resilience",
+    "Health Considerations",
+    "Somatic Defense Intake Quiz"
+  ].includes(section.section);
+
+  const secEl = document.createElement("section");
+  secEl.innerHTML = `<h2>${section.section}</h2>`;
+
+  section.questions.forEach(q => {
+    const qEl = document.createElement("div");
+    qEl.innerHTML = `<p>${q.text}</p>`;
+
+    q.options.forEach(opt => {
+      // choose input type based on section
+      const inputType = isMulti ? "checkbox" : "radio";
+      // for radios you _must_ keep name consistent per question,
+      // for checkboxes name can be q.id+"[]"
+      const nameAttr = isMulti 
+        ? `${q.id}[]` 
+        : q.id;
+
+      qEl.innerHTML += `
+        <label>
+          <input type="${inputType}" 
+                 name="${nameAttr}" 
+                 value="${opt.category}">
+          ${opt.text}
+        </label><br>`;
+    });
+
+    secEl.appendChild(qEl);
+  });
+
+  quizContainer.appendChild(secEl);
+});
+        quizData.sections.forEach(section => {
           const secEl = document.createElement('section');
           secEl.innerHTML = `<h2>${section.section}</h2>`;
           section.questions.forEach(q => {
