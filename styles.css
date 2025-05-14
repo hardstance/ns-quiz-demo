@@ -1,1 +1,86 @@
+/* 1. Import your site’s font(s) */
+@import url('https://fonts.googleapis.com/css2?family=Oranienbaum:wght@400;700&display=swap');
 
+/* 2. Global settings */
+:root {
+  /* replace these with your site’s exact values */
+  --background: #f6f1e8;         /* page background */
+  --text-color: #3e5b65;         /* body text */
+  --heading-color: #3e5b65;      /* h1/h2 color */
+  --accent: #b6542e;             /* button & highlight color */
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  max-width: 600px;
+  font-family: Oranienbaum, serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.5rem;
+  color: var(--heading-color);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.25rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: flex;
+  align-items: flex-start;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+}
+
+/* Style the quiz button */
+#submitQuiz {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+#submitQuiz:hover {
+  opacity: 0.9;
+}
+
+/* Results box */
+#results {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Make links (if any) match your accent */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
