@@ -37,7 +37,7 @@ p {
   margin: .5rem 0 0.5rem;
   font-weight: bold;
   color: var(--accent);
-
+}
 section {
   margin-bottom: 2rem;
 }
@@ -46,7 +46,7 @@ label {
   display: flex;
   align-items: flex-start;
   margin: 0.5rem 0.5rem;
-  font-size: 1rem;
+  font-size: .5rem;
 }
 
 input[type="radio"],
