@@ -80,38 +80,36 @@
 
     // 3) Fetch the quiz data and render
     fetch('quiz_structure.json')
-      .then(r => r.json())
-      .then(quizData => {
-        const quizContainer = document.getElementById('quiz');
-quizData.sections.forEach(section => {
+    .then(res => res.json())
+    .then(quizData => {
+      const quizContainer = document.getElementById('quiz');
+
+      // Render each section
+      quizData.sections.forEach(section => {
         const isMulti = multiSelectSections.includes(section.section);
         const secEl = document.createElement('section');
         secEl.innerHTML = `<h2>${section.section}</h2>`;
 
         if (isMulti) {
-          // Group all questions under one prompt
+          // Single prompt + all checkboxes
           const prompt = section.questions[0].text;
           const qEl = document.createElement('div');
           qEl.innerHTML = `<p>${prompt}</p>`;
 
-          section.questions.forEach(q => {
+          section.questions.forEach(q =>
             q.options.forEach(opt => {
               qEl.innerHTML += `
                 <label>
-                  <input 
-                    type="checkbox" 
-                    name="${q.id}[]" 
-                    value="${opt.category}">
-                  ${opt.text}
+                  <input type="checkbox" name="${q.id}[]" value="${opt.category}">
+                    ${opt.text}
                 </label><br>`;
-            });
-          });
+            })
+          );
 
           secEl.appendChild(qEl);
 
-        } 
-        else {
-          // Render each question individually (radios)
+        } else {
+          // Individual radio questions
           section.questions.forEach(q => {
             const qEl = document.createElement('div');
             qEl.innerHTML = `<p>${q.text}</p>`;
@@ -119,78 +117,57 @@ quizData.sections.forEach(section => {
             q.options.forEach(opt => {
               qEl.innerHTML += `
                 <label>
-                  <input 
-                    type="radio" 
-                    name="${q.id}" 
-                    value="${opt.category}">
-                  ${opt.text}
-                </label><br>`;
-            });
-        // Render each section
-        quizData.sections.forEach(section => {
-          const isMulti = multiSelectSections.includes(section.section);
-          const secEl = document.createElement('section');
-          secEl.innerHTML = `<h2>${section.section}</h2>`;
-
-          section.questions.forEach(q => {
-            const qEl = document.createElement('div');
-            qEl.innerHTML = `<p>${q.text}</p>`;
-
-            q.options.forEach(opt => {
-              const type = isMulti ? 'checkbox' : 'radio';
-              const nameAttr = isMulti ? `${q.id}[]` : q.id;
-              qEl.innerHTML += `
-                <label>
-                  <input type="${type}" name="${nameAttr}" value="${opt.category}">
-                  ${opt.text}
+                  <input type="radio" name="${q.id}" value="${opt.category}">
+                    ${opt.text}
                 </label><br>`;
             });
 
             secEl.appendChild(qEl);
           });
+        }
 
-          quizContainer.appendChild(secEl);
-        });
+        quizContainer.appendChild(secEl);
+      });
 
-        // 4) Handle submission & scoring
-        document.getElementById('submitQuiz').addEventListener('click', () => {
-          const counts = { Fight:0, Flight:0, Freeze:0, Regulation:0 };
+      // Submit button logic
+      document.getElementById('submitQuiz').addEventListener('click', () => {
+        const counts = { Fight:0, Flight:0, Freeze:0, Regulation:0 };
 
-          quizData.sections.forEach(section => {
-            const isMulti = multiSelectSections.includes(section.section);
-            section.questions.forEach(q => {
-              if (isMulti) {
-                document.querySelectorAll(`input[name="${q.id}[]"]:checked`)
-                  .forEach(inp => counts[inp.value]++);
-              } else {
-                const sel = document.querySelector(`input[name="${q.id}"]:checked`);
-                if (sel) counts[sel.value]++;
-              }
-            });
+        quizData.sections.forEach(section => {
+          const isMulti = multiSelectSections.includes(section.section);
+          section.questions.forEach(q => {
+            if (isMulti) {
+              document.querySelectorAll(`input[name="${q.id}[]"]:checked`)
+                .forEach(inp => counts[inp.value]++);
+            } else {
+              const sel = document.querySelector(`input[name="${q.id}"]:checked`);
+              if (sel) counts[sel.value]++;
+            }
           });
-
-          // Determine primary & secondary
-          const sorted = Object.entries(counts).sort((a,b) => b[1] - a[1]);
-          const primary   = sorted[0][0];
-          const secondary = sorted[1][1] > 0 ? sorted[1][0] : '';
-          const key       = `${primary}_${secondary}`;
-
-          // Lookup result with fallback to primary or Regulation
-          const result = resultsMap[key]
-                       || resultsMap[`${primary}_`]
-                       || resultsMap['Regulation_'];
-
-          // Render the narrative
-          const r = document.getElementById('results');
-          r.innerHTML = `
-            <h3>${result.title}</h3>
-            <p>${result.description}</p>
-            <p><strong>Next Steps:</strong> ${result.nextSteps}</p>`;
-          r.scrollIntoView({ behavior:'smooth' });
         });
-      })
-      .catch(err => console.error('Error loading quiz:', err));
-  </script>
+
+        // Figure out primary & secondary patterns
+        const sorted    = Object.entries(counts).sort((a,b)=> b[1]-a[1]);
+        const primary   = sorted[0][0];
+        const secondary = (sorted[1] && sorted[1][1] > 0) ? sorted[1][0] : '';
+        const key       = `${primary}_${secondary}`;
+
+        // Lookup with fallbacks
+        const result = resultsMap[key]
+                     || resultsMap[`${primary}_`]
+                     || resultsMap['Regulation_'];
+
+        // Display
+        const out = document.getElementById('results');
+        out.innerHTML = `
+          <h3>${result.title}</h3>
+          <p>${result.description}</p>
+          <p><strong>Next Steps:</strong> ${result.nextSteps}</p>`;
+        out.scrollIntoView({ behavior:'smooth' });
+      });
+    })
+    .catch(err => console.error('Error loading quiz:', err));
+</script>
 
 </body>
 </html>
