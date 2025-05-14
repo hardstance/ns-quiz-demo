@@ -19,6 +19,20 @@
 
   <!-- 1) Load and render the quiz -->
   <script>
+    document.getElementById('submitQuiz').addEventListener('click', () => {
+  const counts = { Fight:0, Flight:0, Freeze:0, Regulation:0 };
+  quizData.sections.forEach(section => {
+    const isMulti = multiSelectSections.includes(section.section);
+    section.questions.forEach(q => {
+      if (isMulti) {
+        document.querySelectorAll(`input[name="${q.id}[]"]:checked`)
+          .forEach(inp => counts[inp.value]++);
+      } else {
+        const sel = document.querySelector(`input[name="${q.id}"]:checked`);
+        if (sel) counts[sel.value]++;
+      }
+    });
+  });
   // define which sections use checkboxes
   const multiSelectSections = ['Adaptive Resilience','Health Considerations'];
 
