@@ -19,47 +19,73 @@
   <div id="results"></div>
 
   <script>
-    // 1. Load the JSON data
-    fetch('quiz_structure.json')
-      .then(res => res.json())
-      .then(quizData => {
-        const quizContainer = document.getElementById('quiz');
+  <script>
+  // Fetch the quiz JSON
+  fetch('quiz_structure.json')
+    .then(res => res.json())
+    .then(quizData => {
+      const quizContainer = document.getElementById('quiz');
 
-        // 2. Render sections + questions
-quizData.sections.forEach(section => {
-  const isMulti = [
-    "Adaptive Resilience",
-    "Health Considerations",
-    "Somatic Defense Intake Quiz"
-  ].includes(section.section);
+      // For each section...
+      quizData.sections.forEach(section => {
+        // Decide if this section allows multiple answers
+        const multiSelectSections = [
+          'Adaptive Resilience',
+          'Health Considerations',
+          'Somatic Defense Intake Quiz'
+        ];
+        const isMulti = multiSelectSections.includes(section.section);
 
-  const secEl = document.createElement("section");
-  secEl.innerHTML = `<h2>${section.section}</h2>`;
+        // Create the section wrapper
+        const secEl = document.createElement('section');
+        secEl.innerHTML = `<h2>${section.section}</h2>`;
 
-  section.questions.forEach(q => {
-    const qEl = document.createElement("div");
-    qEl.innerHTML = `<p>${q.text}</p>`;
+        // Render each question
+        section.questions.forEach(q => {
+          const qEl = document.createElement('div');
+          qEl.innerHTML = `<p>${q.text}</p>`;
 
-    q.options.forEach(opt => {
-      // choose input type based on section
-      const inputType = isMulti ? "checkbox" : "radio";
-      // for radios you _must_ keep name consistent per question,
-      // for checkboxes name can be q.id+"[]"
-      const nameAttr = isMulti 
-        ? `${q.id}[]` 
-        : q.id;
+          q.options.forEach(opt => {
+            // Use checkbox for multi, radio otherwise
+            const inputType = isMulti ? 'checkbox' : 'radio';
+            // For radios: name="QID"; for checkboxes, name="QID[]"
+            const nameAttr = isMulti ? `${q.id}[]` : q.id;
 
-      qEl.innerHTML += `
-        <label>
-          <input type="${inputType}" 
-                 name="${nameAttr}" 
-                 value="${opt.category}">
-          ${opt.text}
-        </label><br>`;
-    });
+            qEl.innerHTML += `
+              <label>
+                <input
+                  type="${inputType}"
+                  name="${nameAttr}"
+                  value="${opt.category}">
+                ${opt.text}
+              </label><br>`;
+          });
 
-    secEl.appendChild(qEl);
-  });
+          secEl.appendChild(qEl);
+        });
+
+        quizContainer.appendChild(secEl);
+      });
+
+      // The rest of your submit handler stays the same...
+      document.getElementById('submitQuiz').addEventListener('click', () => {
+        const counts = { Fight:0, Flight:0, Freeze:0, Regulation:0 };
+        quizData.sections.flatMap(s => s.questions).forEach(q => {
+          // Gather checked inputs for each question
+          const selector = isMulti 
+            ? `input[name="${q.id}[]"]:checked`
+            : `input[name="${q.id}"]:checked`;
+          document.querySelectorAll(selector).forEach(inp => {
+            counts[inp.value] = (counts[inp.value] || 0) + 1;
+          });
+        });
+
+        // Determine primary/secondary and render results as before...
+        /* ... */
+      });
+    })
+    .catch(err => console.error("Error loading quiz data:", err));
+</script>
 
         // 3. Define result narratives
         const resultsMap = {
