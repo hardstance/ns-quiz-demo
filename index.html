@@ -61,27 +61,6 @@ quizData.sections.forEach(section => {
     secEl.appendChild(qEl);
   });
 
-  quizContainer.appendChild(secEl);
-});
-        quizData.sections.forEach(section => {
-          const secEl = document.createElement('section');
-          secEl.innerHTML = `<h2>${section.section}</h2>`;
-          section.questions.forEach(q => {
-            const qEl = document.createElement('div');
-            qEl.innerHTML = `<p>${q.text}</p>`;
-            q.options.forEach(opt => {
-              const id = `${q.id}_${opt.key}`;
-              qEl.innerHTML += `
-                <label>
-                  <input type="radio" name="${q.id}" id="${id}" value="${opt.category}">
-                  ${opt.text}
-                </label><br>`;
-            });
-            secEl.appendChild(qEl);
-          });
-          quizContainer.appendChild(secEl);
-        });
-
         // 3. Define result narratives
         const resultsMap = {
           "Fight_Regulation": {
