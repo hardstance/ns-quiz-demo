@@ -22,7 +22,15 @@
   // define which sections use checkboxes
   const multiSelectSections = ['Adaptive Resilience','Health Considerations'];
 
-  // your 10 profiles map (abbreviated here—you’ll paste in all 10)
+    // try the exact combo
+let result = resultsMap[key];
+// then try just the primary pattern
+if (!result) result = resultsMap[`${primary}_`];
+// if we still don’t have anything, fall back to a generic “Regulation” profile
+if (!result) result = resultsMap['Regulation_'];
+
+console.log('lookup key', key, 'primary fallback', primary + '_', 'result', result);
+
   const resultsMap = {
    // 3. Define result narratives
         const resultsMap = {
